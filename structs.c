@@ -35,45 +35,16 @@ struct house sampleHouse ( ) {
   }
   return h;
 }
-struct boardGame sampleGame () {
-  struct boardGame g;
-  char [5][50] titles = {"Scrabble", "Chess", "Checkers", "Battleship", "Connect 4"}
-  int [5] players = {6, 2, 2, 4, 4};
-  int r = rand () % 5;
-  if (r == 0) {
-    g.name = titles [0];
-    g.numplayers = players[0];
-  }
-  if (r == 1) {
-    g.name = titles [1];
-    g.numplayers = players[1];
-  }
-  if (r == 2) {
-    g.name = titles [2];
-    g.numplayers = players[2];
-  }
-  if (r == 3) {
-    g.name = titles [3];
-    g.numplayers = players[3];
-  }
-  else {
-    g.name = titles [4];
-    g.numplayers = players[4];
-  }
-  g.points = 0;
-  return g;
-}
+
 
 void printHouse (struct house h) {
   printf ("HOUSE\n%s\n", h.address);
   printf ("Cost: %d", h.cost);
   printf ("Size: %d rooms", h.numrooms);
 }
-void printGame(struct boardGame g) {
-  printf ("BOARD GAME\n%s\n", g.name);
-  printf ("Max Players: %d", g.numplayers);
-  printf ("Points: ", g.points); 
-}
 
-void modifyHouse (struct house h, char* ad, int price, int rooms);
-void modifyGame (struct boardGame g, char* title, int players, int pts);
+void modifyHouse (struct house *h, char *ad, int price, int rooms) {
+  h -> address = ad;
+  h -> cost = price;
+  h -> numrooms = rooms;
+}
