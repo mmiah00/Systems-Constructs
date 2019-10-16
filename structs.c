@@ -58,14 +58,22 @@ struct boardGame sampleGame () {
   }
   else {
     g.name = titles [4];
-    g.numplayers = players[4]; 
+    g.numplayers = players[4];
   }
   g.points = 0;
   return g;
 }
 
-void printHouse (struct house h);
-void printGame(struct boardGame g);
+void printHouse (struct house h) {
+  printf ("HOUSE\n%s\n", h.address);
+  printf ("Cost: %d", h.cost);
+  printf ("Size: %d rooms", h.numrooms);
+}
+void printGame(struct boardGame g) {
+  printf ("BOARD GAME\n%s\n", g.name);
+  printf ("Max Players: %d", g.numplayers);
+  printf ("Points: ", g.points); 
+}
 
 void modifyHouse (struct house h, char* ad, int price, int rooms);
 void modifyGame (struct boardGame g, char* title, int players, int pts);
