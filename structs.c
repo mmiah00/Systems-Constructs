@@ -16,7 +16,7 @@ struct house sampleHouse ( ) {
 
 
 void printHouse (struct house h) {
-  printf ("HOUSE\n%s\n", h.address);
+  printf ("%s\n", h.address);
   printf ("Cost: %d\n", h.cost);
   printf ("Size: %d rooms\n", h.numrooms);
 }
